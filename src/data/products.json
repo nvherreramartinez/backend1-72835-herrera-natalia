@@ -1,0 +1,46 @@
+[
+	{
+		"id": "ffc5e5bd-fadc-4d97-8f98-7d7674189125",
+		"title": "Amoxidal",
+		"description": "Amoxicilina 500mg",
+		"code": "01",
+		"price": 5080,
+		"status": "true",
+		"stock": 10,
+		"category": "Antibióticos",
+		"thumbnails": "https://i.postimg.cc/286CZVsn/amoxidal.jpg"
+	},
+	{
+		"id": "57ff46b1-448d-4d9e-90c8-9575b10897e4",
+		"title": "Novalgina",
+		"description": "Dipirona sódica 50mg/ml",
+		"code": "02",
+		"price": 8699,
+		"status": "true",
+		"stock": 8,
+		"category": "Antifebriles",
+		"thumbnails": "https://i.postimg.cc/Mp8GCWc4/novalgina.png"
+	},
+	{
+		"id": "6e00857f-f925-4f47-9e88-a4a991777ebf",
+		"title": "Actron",
+		"description": "Ibuprofeno 600mg",
+		"code": "03",
+		"price": 6599,
+		"status": "true",
+		"stock": 20,
+		"category": "Analgésicos",
+		"thumbnails": "https://i.postimg.cc/VvZYZCrQ/actron.png"
+	},
+	{
+		"id": "ed598726-af7a-473a-8767-10497fdeb617",
+		"title": "Tafirol",
+		"description": "Paracetamol 500mg",
+		"code": "03",
+		"price": 6599,
+		"status": "true",
+		"stock": 50,
+		"category": "Analgésicos",
+		"thumbnails": "https://i.postimg.cc/SsdpXhVZ/tafirol.jpg"
+	}
+]
