@@ -1,0 +1,118 @@
+{
+    "info": {
+        "name": "Backend API Collection",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Productos",
+            "item": [
+                {
+                    "name": "Obtener todos los productos",
+                    "request": {
+                        "method": "GET",
+                        "url": "{{base_url}}/api/products"
+                    }
+                },
+                {
+                    "name": "Obtener producto por ID",
+                    "request": {
+                        "method": "GET",
+                        "url": "{{base_url}}/api/products/:id"
+                    }
+                },
+                {
+                    "name": "Crear producto",
+                    "request": {
+                        "method": "POST",
+                        "url": "{{base_url}}/api/products",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"Ejemplo Producto\",\n    \"price\": 100,\n    \"stock\": 10\n}"
+                        }
+                    }
+                },
+                {
+                    "name": "Actualizar producto",
+                    "request": {
+                        "method": "PUT",
+                        "url": "{{base_url}}/api/products/:id",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"Producto Actualizado\",\n    \"price\": 150\n}"
+                        }
+                    }
+                },
+                {
+                    "name": "Eliminar producto",
+                    "request": {
+                        "method": "DELETE",
+                        "url": "{{base_url}}/api/products/:id"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Carritos",
+            "item": [
+                {
+                    "name": "Obtener todos los carritos",
+                    "request": {
+                        "method": "GET",
+                        "url": "{{base_url}}/api/carts"
+                    }
+                },
+                {
+                    "name": "Obtener carrito por ID",
+                    "request": {
+                        "method": "GET",
+                        "url": "{{base_url}}/api/carts/:id"
+                    }
+                },
+                {
+                    "name": "Agregar producto al carrito",
+                    "request": {
+                        "method": "POST",
+                        "url": "{{base_url}}/api/carts/:id/products",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"productId\": \"id_producto\",\n    \"quantity\": 1\n}"
+                        }
+                    }
+                },
+                {
+                    "name": "Eliminar producto del carrito",
+                    "request": {
+                        "method": "DELETE",
+                        "url": "{{base_url}}/api/carts/:id/products/:productId"
+                    }
+                },
+                {
+                    "name": "Vaciar carrito",
+                    "request": {
+                        "method": "DELETE",
+                        "url": "{{base_url}}/api/carts/:id"
+                    }
+                }
+            ]
+        }
+    ]
+}

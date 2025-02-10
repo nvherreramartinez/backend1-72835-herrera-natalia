@@ -6,5 +6,5 @@ export const __dirname = join(dirname(__filename) + '../../../')
 
 export const config = {
     dirname: __dirname,
-    PORT: 8080,
+    PORT: 3000,
 }
