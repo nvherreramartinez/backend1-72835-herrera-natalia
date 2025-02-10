@@ -12,7 +12,12 @@ const pathToProducts = path.join(config.dirname, '/src/data/products.json');
 ProductsRouter.get('/', async (req, res) => {
     let productsString = await fs.promises.readFile(pathToProducts, 'utf-8');
     const products = JSON.parse(productsString);
-    res.send({ products })
+    const product = products.find(p => p.id === id);
+
+    if (!product){
+        return res.status(404).send({message: 'Producto inexistente'})
+    }
+    res.send({ product })
 })
 
 ProductsRouter.post('/', validateInputProducts, async (req, res) => {

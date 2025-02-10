@@ -30,7 +30,7 @@ CartsRouter.get('/cart/:cid', async (req, res) => {
     const carts = JSON.parse(cartsString); 
     const { cid } = req.params; 
 
-    const cart = carts.find(c => c.id === Number(cid)); 
+    const cart = carts.find(c => c.id === cid); 
 
     if (!cart) {
     return res.status(404).send({ message: 'Carrito no encontrado' });
@@ -45,7 +45,7 @@ CartsRouter.post('/:cid/product/:pid', async (req, res) => {
     let productsString = await fs.promises.readFile(path.join(config.dirname, '/src/data/products.json'), 'utf-8');
     const products = JSON.parse(productsString);
 
-    const product = products.find(p => p.id === Number(pid));
+    const product = products.find(p => p.id === pid);
     if (!product) {
     return res.status(404).send({ message: 'Producto no encontrado' });
     }
@@ -53,16 +53,16 @@ CartsRouter.post('/:cid/product/:pid', async (req, res) => {
     let cartsString = await fs.promises.readFile(pathToCarts, 'utf-8');
     const carts = JSON.parse(cartsString);
 
-    const cart = carts.find(c => c.id === Number(cid));
+    const cart = carts.find(c => c.id === cid);
     if (!cart) {
     return res.status(404).send({ message: 'Carrito no encontrado' });
     }
 
-    const productInCart = cart.products.find(p => p.product === Number(pid));
+    const productInCart = cart.products.find(p => p.product === pid);
     if (productInCart) {
         productInCart.quantity += 1; 
     } else {
-        cart.products.push({ product: Number(pid), quantity: 1 }); 
+        cart.products.push({ product: pid, quantity: 1 }); 
     }
     await fs.promises.writeFile(pathToCarts, JSON.stringify(carts, null, '\t'));
 
