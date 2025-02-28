@@ -1,13 +1,9 @@
 import { Router } from "express";
-//import path from 'path';
-//import { config } from '../config/index.js';
 import { validateCreateCart } from "../middlewares/validacionMiddlewares.js";
 import { Cart } from "../models/cart.model.js";
 import { Product } from "../models/product.model.js";
 
 export const CartsRouter = Router();
-
-//const pathToCarts = path.join(config.dirname, '/src/data/carts.json');
 
 CartsRouter.post('/', validateCreateCart, async (req, res) => {
     try {

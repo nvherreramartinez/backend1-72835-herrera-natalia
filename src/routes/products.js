@@ -1,14 +1,9 @@
 import { Router } from "express";
-//import fs from 'fs';
-//import path from 'path';
-//import { config } from '../config/index.js';
 import { v4 as uuidv4 } from 'uuid';
 import { validateInputProducts } from "../middlewares/validacionMiddlewares.js";
 import { Product } from "../models/product.model.js";
 
 export const ProductsRouter = Router()
-
-//const pathToProducts = path.join(config.dirname, '/src/data/products.json');
 
 ProductsRouter.get('/', async (req, res) => {
     try {

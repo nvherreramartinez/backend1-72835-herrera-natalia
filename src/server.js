@@ -4,7 +4,7 @@ import { initMongoDBAtlas } from './db/index.js';
 
 const app = initApp()
 
-/*initMongoDBAtlas()*/
+initMongoDBAtlas()
 
 const server = app.listen(config.PORT, () => {
     console.info(`Server listen on http://localhost:${config.PORT}`)

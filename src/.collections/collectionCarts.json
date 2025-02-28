@@ -1,0 +1,58 @@
+{
+    "info": {
+        "name": "Backend API Collection",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Carritos",
+            "item": [
+                {
+                    "name": "Obtener todos los carritos",
+                    "request": {
+                        "method": "GET",
+                        "url": "{{base_url}}/api/carts"
+                    }
+                },
+                {
+                    "name": "Obtener carrito por ID",
+                    "request": {
+                        "method": "GET",
+                        "url": "{{base_url}}/api/carts/:id"
+                    }
+                },
+                {
+                    "name": "Agregar producto al carrito",
+                    "request": {
+                        "method": "POST",
+                        "url": "{{base_url}}/api/carts/:id/products",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"productId\": \"id_producto\",\n    \"quantity\": 1\n}"
+                        }
+                    }
+                },
+                {
+                    "name": "Eliminar producto del carrito",
+                    "request": {
+                        "method": "DELETE",
+                        "url": "{{base_url}}/api/carts/:id/products/:productId"
+                    }
+                },
+                {
+                    "name": "Vaciar carrito",
+                    "request": {
+                        "method": "DELETE",
+                        "url": "{{base_url}}/api/carts/:id"
+                    }
+                }
+            ]
+        }
+    ]
+}

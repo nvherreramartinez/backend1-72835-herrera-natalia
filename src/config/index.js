@@ -8,6 +8,6 @@ export const config = {
     dirname: __dirname,
     PORT: 8080,
     db: {
-        connectionString: `mongodb+srv://nvherreramartinez:MbbnffoUAiAXLDVD@cluster0.t1su7.mongodb.net/coderhouse?retryWrites=true&w=majority&appName=Cluster0`,
+        connectionString: `mongodb+srv://nvherreramartinez:MbbnffoUAiAXLDVD@cluster0.t1su7.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`,
     },
 }
