@@ -18,13 +18,11 @@ Para conocer un poco más sobre el proyecto se puede acceder a una preversión a
 [Express] Framework de desarrollo para crear servidores de una manera escalable.
 [Postman] Software profesional que permite gestionar peticiones simulando ser un cliente.
 [Cookie-Parser] Middleware de análisis de cookies.
-[Multer] Middleware de terceros, pensado para poder realizar carga de archivos al servidor. 
-[Handlebars] Motor de plantillas pensado para agregar un nivel medio de dinamismo en una página web.
 [UUID] Identificador único.
 [MongoDBCommunityServer] Base de datos no relacional orientada a documentos.
 [MongoDBCompass] Cliente visual de MongoDB, el cual nos permitirá gestionar los documentos de forma mucho más intuitiva.
+[MondoDBAtlas] Base de datos del proyecto
 [Docker] Plataforma diseñada para ayudar a los desarrolladores a crear, compartir y ejecutar aplicaciones en contenedores.
-
 
 ## Quien soy 🙎🏼‍♀️
 

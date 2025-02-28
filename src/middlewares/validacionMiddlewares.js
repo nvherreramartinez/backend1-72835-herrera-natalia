@@ -17,7 +17,7 @@ export const validateInputProducts = (req, res, next) => {
     }
 };
 
-export const validateCreateCart = (req, res, next) => {
+/*export const validateCreateCart = (req, res, next) => {
     try {
         const { id, timestamp, products } = req.body;
         if (!id || !timestamp || !Array.isArray(products)) {
@@ -32,5 +32,20 @@ export const validateCreateCart = (req, res, next) => {
             error,
         });
     }
+};*/
+export const validateCreateCart = (req, res, next) => {
+    try {
+        const { products } = req.body;
+        if (!Array.isArray(products)) {
+            return res.status(400).send({
+                message: 'El carrito debe contener una lista de productos válida.'
+            });
+        }
+        next();
+    } catch (error) {
+        res.status(500).send({
+            message: 'Error al validar los datos del carrito',
+            error,
+        });
+    }
 };
-

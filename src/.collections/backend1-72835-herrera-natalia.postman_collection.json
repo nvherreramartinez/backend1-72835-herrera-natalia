@@ -1,0 +1,188 @@
+{
+	"info": {
+		"_postman_id": "a70d7371-de22-4141-bbbb-71b525f90a3a",
+		"name": "backend1-72835-herrera-natalia",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "37408366"
+	},
+	"item": [
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Obtener todos los productos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}api/products/"
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener producto por ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}api/products/67c105b0d4ddc2b92048a0f0"
+					},
+					"response": []
+				},
+				{
+					"name": "Generar un producto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Azibiotic\",\r\n    \"description\": \"Azitromicina 500mg\",\r\n    \"code\": \"05\",\r\n    \"price\": 14599,\r\n    \"status\": \"true\",\r\n    \"stock\": 2,\r\n    \"category\": \"Antibióticos\",\r\n    \"precioOferta\": 7000,\r\n    \"thumbnails\": \"https://i.postimg.cc/cC5ymBpw/azibiotic.png\"\r\n}\r\n        ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}api/products/"
+					},
+					"response": []
+				},
+				{
+					"name": "Modificar un producto",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"stock\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}api/products/67c105b0d4ddc2b92048a0f0"
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar un producto",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{base_url}}api/products/67c105b0d4ddc2b92048a0f0"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Carts",
+			"item": [
+				{
+					"name": "Crear Carrito",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"products\": []\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}api/carts/"
+					},
+					"response": []
+				},
+				{
+					"name": "Llamar Carrito",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{base_url}}api/carts/67c22b1124fb15c51cee3ea2"
+					},
+					"response": []
+				},
+				{
+					"name": "Agregar producto al carrito",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"products\": [\r\n        {\r\n            \"product\": \"67c10e5d9e581930d69bc898\",\r\n            \"quantity\": 2\r\n        },\r\n        {\r\n            \"product\": \"67c10cd69e581930d69bc88e\",\r\n            \"quantity\": 1\r\n        },\r\n        {\r\n            \"product\": \"67c10c7e9e581930d69bc88c\",\r\n            \"quantity\": 3\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}api/carts/67c22872d58b8f1458b28ac3/"
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar carrito",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}api/carts/67c22b2e24fb15c51cee3ea6/"
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar producto del carrito",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}api/carts/67c22f3efd5361d562b22676/products/67c10ea79e581930d69bc89e"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
