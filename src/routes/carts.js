@@ -7,7 +7,7 @@ export const CartsRouter = Router();
 
 CartsRouter.post('/', validateCreateCart, async (req, res) => {
     try {
-        const { products } = req.body;  // Solo recibe products
+        const { products } = req.body;
         const newCart = new Cart({ products });
         await newCart.save();
         res.status(201).send({
@@ -26,7 +26,6 @@ CartsRouter.post('/:cid/product/:pid', async (req, res) => {
         if (!mongoose.Types.ObjectId.isValid(cid) || !mongoose.Types.ObjectId.isValid(pid)) {
             return res.status(400).send({ message: 'ID de carrito o producto inválido' });
         }
-
         const product = await Product.findById(pid);
         if (!product) {
             return res.status(404).send({ message: 'Producto inexistente' });
@@ -109,7 +108,37 @@ CartsRouter.delete('/:cid/products/:pid', async (req, res) => {
         res.status(500).send({ message: 'Error al eliminar el producto del carrito', error });
     }
 });
+CartsRouter.put('/:cid/products/:pid', async (req, res) => {
+    try {
+        const { cid, pid } = req.params;
+        const { quantity } = req.body;
 
+        if (!mongoose.Types.ObjectId.isValid(cid) || !mongoose.Types.ObjectId.isValid(pid)) {
+            return res.status(400).send({ message: 'ID inválido' });
+        }
+
+        if (!Number.isInteger(quantity) || quantity < 1) {
+            return res.status(400).send({ message: 'Cantidad inválida' });
+        }
+
+        const cart = await Cart.findById(cid);
+        if (!cart) {
+            return res.status(404).send({ message: 'Carrito no encontrado' });
+        }
+
+        const productInCart = cart.products.find(p => p.product.equals(pid));
+        if (!productInCart) {
+            return res.status(404).send({ message: 'Producto no está en el carrito' });
+        }
+
+        productInCart.quantity = quantity;
+        await cart.save();
+
+        res.send({ message: 'Cantidad actualizada', cart });
+    } catch (error) {
+        res.status(500).send({ message: 'Error al actualizar cantidad', error });
+    }
+});
 CartsRouter.delete('/:cid', async (req, res) => {
     try {
         const cart = await Cart.findByIdAndDelete(req.params.cid);

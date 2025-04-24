@@ -1,68 +1,102 @@
 {
-    "info": {
-        "name": "Backend API Collection",
-        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-    },
-    "item": [
-        {
-            "name": "Productos",
-            "item": [
-                {
-                    "name": "Obtener todos los productos",
-                    "request": {
-                        "method": "GET",
-                        "url": "{{base_url}}/api/products"
-                    }
-                },
-                {
-                    "name": "Obtener producto por ID",
-                    "request": {
-                        "method": "GET",
-                        "url": "{{base_url}}/api/products/:id"
-                    }
-                },
-                {
-                    "name": "Crear producto",
-                    "request": {
-                        "method": "POST",
-                        "url": "{{base_url}}/api/products",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\n    \"name\": \"Ejemplo Producto\",\n    \"price\": 100,\n    \"stock\": 10\n}"
-                        }
-                    }
-                },
-                {
-                    "name": "Actualizar producto",
-                    "request": {
-                        "method": "PUT",
-                        "url": "{{base_url}}/api/products/:id",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\n    \"name\": \"Producto Actualizado\",\n    \"price\": 150\n}"
-                        }
-                    }
-                },
-                {
-                    "name": "Eliminar producto",
-                    "request": {
-                        "method": "DELETE",
-                        "url": "{{base_url}}/api/products/:id"
-                    }
-                }
-            ]
-        }
+  "info": {
+    "_postman_id": "a70d7371-de22-4141-bbbb-71b525f90a3a",
+    "name": "backend1-72835-herrera-natalia",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+    "_exporter_id": "37408366"
+  },
+  "item": [
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Obtener todos los productos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}api/products/"
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener producto por ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}api/products/67c105b0d4ddc2b92048a0f0"
+					},
+					"response": []
+				},
+				{
+					"name": "Generar un producto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Azibiotic\",\r\n    \"description\": \"Azitromicina 500mg\",\r\n    \"code\": \"05\",\r\n    \"price\": 14599,\r\n    \"status\": \"true\",\r\n    \"stock\": 2,\r\n    \"category\": \"Antibióticos\",\r\n    \"precioOferta\": 7000,\r\n    \"thumbnails\": \"https://i.postimg.cc/cC5ymBpw/azibiotic.png\"\r\n}\r\n        ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}api/products/"
+					},
+					"response": []
+				},
+				{
+					"name": "Modificar un producto",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"stock\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}api/products/67c105b0d4ddc2b92048a0f0"
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar un producto",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{base_url}}api/products/67c105b0d4ddc2b92048a0f0"
+					},
+					"response": []
+				}
+			]
+		}
     ]
 }
